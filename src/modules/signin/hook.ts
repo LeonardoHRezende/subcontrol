@@ -1,6 +1,6 @@
 import { login } from "@/lib/supabase/auth";
 import { useToast } from "@/components/molecule/toast";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { APP_ROUTES } from "@/utils/app-routes";
 
 export function useLogin() {

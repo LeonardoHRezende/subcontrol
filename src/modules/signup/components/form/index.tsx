@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { FormProvider, useForm } from "react-hook-form";
 import { Button } from "@/components/atoms/button";
@@ -7,6 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { SigSignUpSchema } from "../../validation";
 import { PasswordValidation } from "../password-validation";
 import { useSignup } from "../../hook";
+import { APP_ROUTES } from "@/utils/app-routes";
 
 function SignUpForm() {
   const methods = useForm({
@@ -79,7 +82,7 @@ function SignUpForm() {
 
       <div className="space-y-2">
         <p className="text-zinc-700 dark:text-zinc-300">Já tem uma conta?</p>
-        <Link href="/signin" className="hover:underline text-md">
+        <Link href={APP_ROUTES.signin} className="hover:underline text-md">
           Faça o login
         </Link>
       </div>

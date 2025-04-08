@@ -1,8 +1,11 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
-  reactStrictMode: true,
+// next.config.js ou next.config.ts
+const nextConfig = {
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '1mb',
+      allowedOrigins: ['*']
+    }
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

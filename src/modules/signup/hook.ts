@@ -1,6 +1,6 @@
 import { signup } from "@/lib/supabase/auth";
 import { useToast } from "@/components/molecule/toast";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { APP_ROUTES } from "@/utils/app-routes";
 
 export function useSignup() {
@@ -16,7 +16,7 @@ export function useSignup() {
         message: "Agora é só fazer o login com seu e-mail e senha.",
       });
 
-      route.push(APP_ROUTES.login);
+      route.push(APP_ROUTES.signin);
     } catch (error) {
       toast({
         type: "error",
