@@ -80,7 +80,7 @@ function SignUpForm() {
         confirmPassword={methods.watch("confirmPassword")}
       />
 
-      <div className="space-y-2">
+      <div className="space-y-2 pt-2">
         <p className="text-zinc-700 dark:text-zinc-300">Já tem uma conta?</p>
         <Link href={APP_ROUTES.signin} className="hover:underline text-md">
           Faça o login

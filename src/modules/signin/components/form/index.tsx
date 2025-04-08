@@ -58,7 +58,7 @@ function SignInForm() {
         </form>
       </FormProvider>
 
-      <div className="space-y-2">
+      <div className="space-y-2 pt-2">
         <p className="text-zinc-700 dark:text-zinc-300">Não tem uma conta?</p>
         <Link href={APP_ROUTES.signup} className="hover:underline text-md">
           Registre-se
