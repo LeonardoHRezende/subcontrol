@@ -1,6 +1,6 @@
 import type React from "react";
 import { Html, Head, Main, NextScript } from "next/document";
-import { ThemeProvider } from "@/components/ui/theme-provider";
+import { ThemeProvider } from "@/components/atoms/theme-provider";
 
 export default function Document() {
   return (
