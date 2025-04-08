@@ -8,3 +8,5 @@ export const SignInSchema = z.object({
     .email({ message: ValidationMessages.emailType }),
   password: z.string().min(1, { message: ValidationMessages.required })
 });
+
+export type SignInModel = z.infer<typeof SignInSchema>;
