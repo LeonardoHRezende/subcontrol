@@ -9,7 +9,7 @@ function PasswordValidation({
   password,
   confirmPassword,
 }: PasswordValidationProps) {
-  const hasValue = password.length > 0 || confirmPassword.length > 0;
+  const hasValue = password?.length > 0 || confirmPassword?.length > 0;
 
   return (
     <div className="space-y-1 mt-4">

@@ -1,15 +1,40 @@
-import { signup } from "@/lib/supabase/auth";
-import { useToast } from "@/components/molecule/toast";
 import { useRouter } from "next/navigation";
+
+import { signup } from "@/lib/supabase/auth";
+import { updateUserSession } from "@/lib/supabase/session";
+import { useToast } from "@/components/molecule/toast";
+
 import { APP_ROUTES } from "@/utils/app-routes";
+
+import createUser from "@/lib/api/services/users/createUser";
+import { SignUpModel } from "./validation";
+import { bffApi } from "@/lib/api";
 
 export function useSignup() {
   const { toast } = useToast();
   const route = useRouter();
 
-  const handleSignup = async (data: { email: string; password: string }) => {
+  const handleSignup = async (data: SignUpModel) => {
     try {
-      await signup(data);
+      const { user } = await signup(data);
+
+      if (!user?.id) throw new Error("Usuário não encontrado!");
+
+      const userData = await createUser(bffApi, {
+        email: data.email,
+        fullName: data.fullName,
+        companyName: data.companyName,
+        role: "OWNER",
+        id: user.id,
+      });
+
+      await updateUserSession({
+        name: userData.fullName,
+        companyId: userData.companyId,
+        companyName: userData.companyName,
+        role: userData.role,
+      });
+
       toast({
         type: "success",
         title: "Conta criada com sucesso",
