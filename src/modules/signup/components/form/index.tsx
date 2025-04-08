@@ -21,10 +21,10 @@ function SignUpForm() {
   return (
     <div className="text-center space-y-4">
       <div>
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">
+        <h1 className="text-2xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">
           Cadastro
         </h1>
-        <p className="text-xl text-zinc-700 dark:text-zinc-200">
+        <p className="text-lg text-zinc-700 dark:text-zinc-200">
           Crie uma nova conta
         </p>
       </div>
@@ -67,8 +67,10 @@ function SignUpForm() {
           </div>
 
           <Button
-            className="w-full bg-zinc-500 hover:bg-zinc-600 text-zinc-50 py-6"
-            size="lg"
+            type="submit"
+            variant="outline"
+            className="w-full bg-zinc-50"
+            size="sm"
           >
             Cadastrar
           </Button>

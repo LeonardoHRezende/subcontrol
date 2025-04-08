@@ -9,9 +9,9 @@ type ValidationRowProps = {
 function ValidationRow({ label, status }: ValidationRowProps) {
   const icon =
     status === "success" ? (
-      <Check className="w-4 h-4 text-green-200" />
+      <Check className="w-4 h-4 text-green-500 dark:text-green-200" />
     ) : status === "error" ? (
-      <X className="w-4 h-4 text-red-200" />
+      <X className="w-4 h-4 text-red-500 dark:text-red-5200" />
     ) : (
       <div className="w-4 h-4" />
     );
@@ -21,8 +21,8 @@ function ValidationRow({ label, status }: ValidationRowProps) {
       {icon}
       <span
         className={cn(
-          status === "success" && "text-green-200",
-          status === "error" && "text-red-200"
+          status === "success" && "text-green-500 dark:text-green-200",
+          status === "error" && "text-red-500 dark:text-red-200",
         )}
       >
         {label}

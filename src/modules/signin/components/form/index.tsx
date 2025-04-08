@@ -20,10 +20,10 @@ function SignInForm() {
   return (
     <div className="text-center space-y-4">
       <div>
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">
+        <h1 className="text-2xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">
           Bem vindo
         </h1>
-        <p className="text-xl text-zinc-700 dark:text-zinc-200">
+        <p className="text-lg text-zinc-700 dark:text-zinc-200">
           Entre na sua conta
         </p>
       </div>
@@ -51,7 +51,7 @@ function SignInForm() {
             type="submit"
             variant="outline"
             className="w-full bg-zinc-50"
-            size="lg"
+            size="sm"
           >
             Entrar
           </Button>
