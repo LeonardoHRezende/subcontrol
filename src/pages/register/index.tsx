@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 
-export default function LoginPage() {
+export default function RegisterPage() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-abbey-50 dark:bg-abbey-950">
       <Card className="w-full max-w-md mx-auto border-abbey-200 dark:border-abbey-700">
@@ -11,15 +11,19 @@ export default function LoginPage() {
           <div className="text-center space-y-6">
             <div className="space-y-2">
               <h1 className="text-4xl font-bold tracking-tight text-abbey-950 dark:text-abbey-50">
-                Welcome
+                Register
               </h1>
               <p className="text-xl text-abbey-700 dark:text-abbey-200">
-                Sign in to your account
+                Create a new account
               </p>
             </div>
 
             <div className="space-y-4">
               <div className="space-y-4">
+                <Input
+                  placeholder="Full Name"
+                  className="bg-abbey-100 dark:bg-abbey-800 border-abbey-200 dark:border-abbey-700"
+                />
                 <Input
                   type="email"
                   placeholder="Email"
@@ -28,6 +32,11 @@ export default function LoginPage() {
                 <Input
                   type="password"
                   placeholder="Password"
+                  className="bg-abbey-100 dark:bg-abbey-800 border-abbey-200 dark:border-abbey-700"
+                />
+                <Input
+                  type="password"
+                  placeholder="Confirm Password"
                   className="bg-abbey-100 dark:bg-abbey-800 border-abbey-200 dark:border-abbey-700"
                 />
                 <Input
@@ -40,20 +49,20 @@ export default function LoginPage() {
                 className="w-full bg-abbey-500 hover:bg-abbey-600 text-abbey-50 py-6"
                 size="lg"
               >
-                Sign In
+                Register
               </Button>
             </div>
 
             <div className="space-y-4 pt-4">
               <p className="text-abbey-700 dark:text-abbey-300">
-                Don't have an account?
+                Already have an account?
               </p>
-              <Link href="/register">
+              <Link href="/">
                 <Button
                   variant="outline"
                   className="w-40 border-abbey-300 dark:border-abbey-600 text-abbey-700 dark:text-abbey-200 hover:bg-abbey-200 dark:hover:bg-abbey-800"
                 >
-                  Register
+                  Sign In
                 </Button>
               </Link>
             </div>
