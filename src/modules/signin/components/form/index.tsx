@@ -5,11 +5,14 @@ import { InputHookForm } from "@/components/molecule/input";
 import { PasswordHookFormInput } from "@/components/molecule/password-input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SignInSchema } from "@/modules/signin/validation";
+import { useLogin } from "@/modules/signin/hook";
 
 function SignInForm() {
   const methods = useForm({
     resolver: zodResolver(SignInSchema),
   });
+
+  const { handleLogin } = useLogin();
 
   return (
     <div className="text-center space-y-4">
@@ -23,7 +26,10 @@ function SignInForm() {
       </div>
 
       <FormProvider {...methods}>
-        <form className="space-y-4" onSubmit={methods.handleSubmit(() => {})}>
+        <form
+          className="space-y-4"
+          onSubmit={methods.handleSubmit(handleLogin)}
+        >
           <div className="space-y-4">
             <InputHookForm
               name="email"

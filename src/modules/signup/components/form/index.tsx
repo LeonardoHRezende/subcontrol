@@ -6,14 +6,16 @@ import { PasswordHookFormInput } from "@/components/molecule/password-input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SigSignUpSchema } from "../../validation";
 import { PasswordValidation } from "../password-validation";
+import { useSignup } from "../../hook";
 
 function SignUpForm() {
   const methods = useForm({
     resolver: zodResolver(SigSignUpSchema),
   });
 
+  const { handleSignup } = useSignup();
+
   return (
-    
     <div className="text-center space-y-4">
       <div>
         <h1 className="text-4xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">
@@ -25,7 +27,10 @@ function SignUpForm() {
       </div>
 
       <FormProvider {...methods}>
-        <form className="space-y-4" onSubmit={methods.handleSubmit(() => {})}>
+        <form
+          className="space-y-4"
+          onSubmit={methods.handleSubmit(handleSignup)}
+        >
           <div className="space-y-4">
             <InputHookForm
               name="fullName"

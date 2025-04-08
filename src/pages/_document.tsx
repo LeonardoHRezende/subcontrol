@@ -1,6 +1,7 @@
 import type React from "react";
 import { Html, Head, Main, NextScript } from "next/document";
 import { ThemeProvider } from "@/components/atoms/theme-provider";
+import { Toaster } from "@/components/ui/sonner"
 
 export default function Document() {
   return (
@@ -14,6 +15,7 @@ export default function Document() {
           disableTransitionOnChange
         >
           <Main />
+          <Toaster />
           <NextScript />
         </ThemeProvider>
       </body>
