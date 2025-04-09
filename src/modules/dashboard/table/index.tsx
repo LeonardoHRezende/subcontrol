@@ -62,7 +62,7 @@ import {
 } from "@/components/atoms/table";
 
 export const schema = z.object({
-  id: z.string().optional(),
+  id: z.number().optional(),
   header: z.string(),
   type: z.string(),
   status: z.string(),
