@@ -26,13 +26,13 @@ export async function updateSession(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   const isAuthPage = ["/signup", "/signin"].includes(pathname);
-  const isProtectedRoute = pathname.startsWith("/app");
+  // const isProtectedRoute = pathname.startsWith("/app");
 
-  if (!user && isProtectedRoute) {
-    const url = request.nextUrl.clone();
-    url.pathname = "/signin";
-    return NextResponse.redirect(url);
-  }
+  // if (!user && isProtectedRoute) {
+  //   const url = request.nextUrl.clone();
+  //   url.pathname = "/signin";
+  //   return NextResponse.redirect(url);
+  // }
 
   if (user && isAuthPage) {
     const url = request.nextUrl.clone();
