@@ -59,7 +59,7 @@ function NavigationBar() {
     <div className="w-full flex justify-center pt-4">
       <nav className="bg-zinc-800 rounded-full px-5 py-3 inline-flex items-center gap-8 transition-transform duration-300 hover:scale-120">
         <Link
-          className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 hover:cursor-pointer text-center"
+          className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 hover:cursor-pointer text-center hidden md:block"
           href={APP_ROUTES.home}
         >
           subcontrol
