@@ -19,16 +19,14 @@ function HeaderHome() {
       <div className="flex h-16 items-center justify-between px-4">
         <div className="flex gap-5 items-center">
           <Link
-            className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 hover:cursor-pointer"
+            className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 hover:cursor-pointer text-center"
             href={APP_ROUTES.home}
           >
             subcontrol
           </Link>
 
           {/* Menu Desktop */}
-          <div className="hidden md:block">
-            <MainNav />
-          </div>
+          <MainNav className="hidden md:block text-center"/>
         </div>
 
         {/* Ações Desktop */}

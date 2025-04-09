@@ -2,14 +2,20 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 import {
   Home,
   Settings,
   UserRoundPen,
   LayoutList,
   ChartNoAxesCombined,
+  LogOut,
 } from "lucide-react";
+
 import { cn } from "@/lib/utils";
+import { logout } from "@/lib/supabase/auth";
+
+import { APP_ROUTES } from "@/utils/app-routes";
 
 function NavigationBar() {
   const pathname = usePathname();
@@ -40,11 +46,24 @@ function NavigationBar() {
       isActive: pathname === "/edit",
       title: "Perfil",
     },
+    {
+      icon: LogOut,
+      href: "#",
+      isActive: pathname === "/logout",
+      title: "Sair",
+      action: logout,
+    },
   ];
 
   return (
     <div className="w-full flex justify-center pt-4">
       <nav className="bg-zinc-800 rounded-full px-5 py-3 inline-flex items-center gap-8 transition-transform duration-300 hover:scale-120">
+        <Link
+          className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 hover:cursor-pointer text-center"
+          href={APP_ROUTES.home}
+        >
+          subcontrol
+        </Link>
         {navItems.map((item, index) => {
           const Icon = item.icon;
           const isActive = pathname === item.href;
@@ -54,6 +73,7 @@ function NavigationBar() {
               key={index}
               href={item.href}
               className="flex flex-col items-center justify-center relative group"
+              onClick={item?.action}
             >
               <div
                 className={cn(
