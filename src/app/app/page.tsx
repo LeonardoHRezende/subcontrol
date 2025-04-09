@@ -1,60 +1,53 @@
 "use client";
 
-import { Avatar, AvatarFallback } from "@/components/atoms/avatar";
 import { Button } from "@/components/atoms/button";
 import { Card, CardContent } from "@/components/atoms/card";
 import { logout } from "@/lib/supabase/auth";
-import { useSession } from "@/lib/hooks/session";
+import { Container } from "@/components/templates/container";
+import { NavigationBar } from "@/components/molecule/app-nav";
 
 export default function DashboardPage() {
-  const { userName } = useSession();
-
   return (
-    <div className="flex items-center justify-center min-h-screen bg-zinc-50 dark:bg-zinc-950">
-      <Card className="w-full max-w-4xl mx-auto border-zinc-200 dark:border-zinc-700">
-        <div className="p-6 border-b border-zinc-200 dark:border-zinc-700 flex justify-between items-center">
-          <h1 className="text-3xl font-bold text-zinc-950 dark:text-zinc-50">
-            Dashboard
-          </h1>
-          <div className="flex items-center gap-2">
-            <span className="text-zinc-600 dark:text-zinc-300">{userName}</span>
-            <Avatar>
-              <AvatarFallback className="bg-zinc-200 dark:bg-zinc-700 text-zinc-700 dark:text-zinc-200">
-                {userName?.charAt(0).toUpperCase()}
-              </AvatarFallback>
-            </Avatar>
-          </div>
-        </div>
+    <Container>
+      <div className="flex flex-col min-h-screen space-y-4 w-full">
+        <NavigationBar />
 
-        <CardContent className="p-6">
-          <div className="flex items-start mb-8">
-            <Button
-              variant="outline"
-              className="rounded-full px-6 border-zinc-300 dark:border-zinc-600 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-200 dark:hover:bg-zinc-800"
-              onClick={logout}
-            >
-              Sign Out
-            </Button>
-          </div>
+        <Card className="w-full border-zinc-200 dark:border-zinc-700">
+          <CardContent className="space-y-4">
+            <div className=" dark:border-zinc-700 flex justify-between items-center">
+              <h1 className="text-3xl font-bold text-zinc-950 dark:text-zinc-50">
+                Dashboard
+              </h1>
+            </div>
 
-          <Card className="border border-zinc-200 dark:border-zinc-700 rounded-md mb-6 bg-zinc-50 dark:bg-zinc-900">
-            <CardContent className="flex items-center justify-center h-40">
-              <p className="text-zinc-500 dark:text-zinc-300">
-                No data available
-              </p>
-            </CardContent>
-          </Card>
+            <div className="flex items-start mb-8 gap-3">
+              <Button
+                variant="outline"
+                className="rounded-full px-6 border-zinc-300 dark:border-zinc-600 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-200 dark:hover:bg-zinc-800"
+                onClick={logout}
+              >
+                Sign Out
+              </Button>
 
-          <div className="grid grid-cols-2 gasp-6">
-            <Card className="border border-zinc-200 dark:border-zinc-700 rounded-md bg-zinc-50 dark:bg-zinc-900">
-              <CardContent className="h-52"></CardContent>
-            </Card>
-            <Card className="border border-zinc-200 dark:border-zinc-700 rounded-md bg-zinc-50 dark:bg-zinc-900">
-              <CardContent className="h-52"></CardContent>
-            </Card>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+              <Button
+                variant="outline"
+                className="rounded-full px-6 border-zinc-300 dark:border-zinc-600 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-200 dark:hover:bg-zinc-800"
+                onClick={logout}
+              >
+                Complete profile
+              </Button>
+
+              <Button
+                variant="outline"
+                className="rounded-full px-6 border-zinc-300 dark:border-zinc-600 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-200 dark:hover:bg-zinc-800"
+                onClick={logout}
+              >
+                Add a subscription
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </Container>
   );
 }
