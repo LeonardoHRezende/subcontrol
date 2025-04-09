@@ -58,12 +58,6 @@ function SignUpForm() {
               placeholder="Confirme sua senha"
               className="bg-zinc-100 dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700"
             />
-            <InputHookForm
-              name="companyName"
-              type="text"
-              placeholder="Nome da empresa"
-              className="bg-zinc-100 dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700"
-            />
           </div>
 
           <Button

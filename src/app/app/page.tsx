@@ -7,11 +7,7 @@ import { logout } from "@/lib/supabase/auth";
 import { useSession } from "@/lib/hooks/session";
 
 export default function DashboardPage() {
-  const {
-    userName,
-    userEmail,
-    userCompanyName,
-  } = useSession();
+  const { userName } = useSession();
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-zinc-50 dark:bg-zinc-950">
@@ -31,13 +27,7 @@ export default function DashboardPage() {
         </div>
 
         <CardContent className="p-6">
-          <div className="flex justify-between items-start mb-8">
-            <div>
-              <h2 className="text-3xl font-bold text-zinc-950 dark:text-zinc-50">
-                {userCompanyName}
-              </h2>
-              <p className="text-zinc-600 dark:text-zinc-300">{userEmail}</p>
-            </div>
+          <div className="flex items-start mb-8">
             <Button
               variant="outline"
               className="rounded-full px-6 border-zinc-300 dark:border-zinc-600 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-200 dark:hover:bg-zinc-800"

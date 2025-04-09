@@ -1,5 +1,4 @@
-import { components } from "@/lib/types/api";
+import { components } from "./api";
 
 export type CreateUserDTO = components["schemas"]["CreateUserDto"];
-export type UserRoles = components["schemas"]["Roles"];
 export type UserDTO = components["schemas"]["GetUserDto"];

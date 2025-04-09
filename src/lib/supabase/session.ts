@@ -1,13 +1,9 @@
 "use server";
 
-import { UserRoles } from "../api/interface";
 import { createClient } from "./server";
 
 export interface UserSessionMetadata {
   name: string;
-  companyId: string;
-  companyName: string;
-  role: UserRoles;
 }
 
 export async function updateUserSession(metadata: UserSessionMetadata) {

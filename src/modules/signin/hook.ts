@@ -28,10 +28,7 @@ export function useLogin() {
       }
 
       await updateUserSession({
-        name: userData.fullName,
-        companyId: userData.companyId,
-        companyName: userData.companyName,
-        role: userData.role,
+        name: userData.fullName
       });
 
       toast({

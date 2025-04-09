@@ -23,16 +23,11 @@ export function useSignup() {
       const userData = await createUser(bffApi, {
         email: data.email,
         fullName: data.fullName,
-        companyName: data.companyName,
-        role: "OWNER",
         id: user.id,
       });
 
       await updateUserSession({
-        name: userData.fullName,
-        companyId: userData.companyId,
-        companyName: userData.companyName,
-        role: userData.role,
+        name: userData.fullName
       });
 
       toast({

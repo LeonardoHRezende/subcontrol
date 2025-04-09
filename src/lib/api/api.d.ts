@@ -56,22 +56,15 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
-        /** @enum {string} */
-        Roles: "OWNER" | "ADMIN" | "WORKER";
         CreateUserDto: {
             id: string;
             fullName: string;
             email: string;
-            companyName: string;
-            role: components["schemas"]["Roles"];
         };
         GetUserDto: {
             id: string;
             fullName: string;
             email: string;
-            companyId: string;
-            companyName: string;
-            role: components["schemas"]["Roles"];
             /** Format: date-time */
             createdAt: string;
             /** Format: date-time */
