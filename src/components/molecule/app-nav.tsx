@@ -14,8 +14,7 @@ import {
 
 import { cn } from "@/lib/utils";
 import { logout } from "@/lib/supabase/auth";
-
-import { APP_ROUTES } from "@/utils/app-routes";
+import { Logo } from "./logo";
 
 function NavigationBar() {
   const pathname = usePathname();
@@ -56,14 +55,9 @@ function NavigationBar() {
   ];
 
   return (
-    <div className="w-full flex justify-center pt-4">
-      <nav className="bg-zinc-800 rounded-full px-5 py-3 inline-flex items-center gap-8 transition-transform duration-300 hover:scale-120">
-        <Link
-          className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 hover:cursor-pointer text-center hidden md:block"
-          href={APP_ROUTES.home}
-        >
-          subcontrol
-        </Link>
+    <div className="w-full flex justify-center items-center gap-4 flex-wrap pt-4 transition-transform duration-300 hover:scale-120">
+      <Logo />
+      <nav className="bg-zinc-800 rounded-full px-5 py-3 inline-flex items-center gap-8 ">
         {navItems.map((item, index) => {
           const Icon = item.icon;
           const isActive = pathname === item.href;

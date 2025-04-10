@@ -12,21 +12,17 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/atoms/drawer";
+import { Logo } from "@/components/molecule/logo";
 
 function HeaderHome() {
   return (
     <header className="border-b border-b-zinc-800 dark:border-b-zinc-50 w-full sticky top-0 z-50 bg-zinc-50 dark:bg-zinc-950">
       <div className="flex h-16 items-center justify-between px-4">
         <div className="flex gap-5 items-center">
-          <Link
-            className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 hover:cursor-pointer text-center"
-            href={APP_ROUTES.home}
-          >
-            subcontrol
-          </Link>
+          <Logo />
 
           {/* Menu Desktop */}
-          <MainNav className="hidden md:block text-center"/>
+          <MainNav className="hidden md:block text-center" />
         </div>
 
         {/* Ações Desktop */}

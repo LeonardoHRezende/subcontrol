@@ -5,7 +5,7 @@ import { ChartAreaInteractive } from "@/modules/dashboard/chart-area";
 import { Container } from "@/components/templates/container";
 import { NavigationBar } from "@/components/molecule/app-nav";
 import { DataTable } from "@/modules/dashboard/table";
-import { SectionCards } from "@/modules/dashboard/resume-card";
+import { SectionCards } from "@/modules/dashboard/resume-section/index";
 import { SiteHeader } from "@/modules/dashboard/site-header";
 
 import data from "@/modules/dashboard/data.json";
