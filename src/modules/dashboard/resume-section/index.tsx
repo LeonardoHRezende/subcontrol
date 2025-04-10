@@ -1,9 +1,9 @@
 import { TrendingUpIcon } from "lucide-react";
 import { ResumeCardWithSkeleton } from "./resume-card/withSkeleton";
 
-export function SectionCards() {
+function SectionCards() {
   return (
-    <div className="flex gap-2 md:grid md:grid-cols-2 md:gap-2 lg:grid-cols-4">
+    <div className="flex gap-2 md:grid xs:grid-cols-1 sm:grid-cols-2 md:gap-2 lg:grid-cols-4">
       <ResumeCardWithSkeleton
         title="total em assinaturas"
         value="R$ 250,00"
@@ -40,3 +40,5 @@ export function SectionCards() {
     </div>
   );
 }
+
+export { SectionCards };

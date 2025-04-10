@@ -79,7 +79,7 @@ function NavigationBar() {
               >
                 <Icon size={22} strokeWidth={2} />
               </div>
-              <span className="absolute -bottom-8 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              <span className="absolute -bottom-8 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-zinc-800 dark:text-zinc-200">
                 {item.title}
               </span>
             </Link>

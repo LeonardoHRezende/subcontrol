@@ -135,7 +135,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
 ];
 
-export function DataTable({
+function DataTable({
   data: initialData,
 }: {
   data: z.infer<typeof schema>[];
@@ -219,12 +219,12 @@ export function DataTable({
                 
       <div className="overflow-hidden rounded-lg border my-4">
         <Table>
-          <TableHeader className="sticky top-0 z-10 bg-muted">
+          <TableHeader className="sticky top-0 z-10 bg-zinc-400 dark:bg-zinc-800 hover:bg-zinc-500 dark:hover:bg-zinc-700"> 
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id} colSpan={header.colSpan}>
+                    <TableHead key={header.id} colSpan={header.colSpan} className="font-semibold text-md">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -245,7 +245,7 @@ export function DataTable({
                   data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
+                    <TableCell key={cell.id} className="text-zinc-800 dark:text-zinc-200 text-sm">
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()
@@ -344,3 +344,5 @@ export function DataTable({
     </div>
   );
 }
+
+export { DataTable };
